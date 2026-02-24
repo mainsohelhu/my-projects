@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chandrashekhar Sahu | Medical Representative</title>
+
+<style>
+:root{
+    --primary-color: #1693f9;
+    --secondary-color: #fffbfb;
+    --text-dark: #2b2b2b;
+    --border-soft: rgba(113, 150, 195, 0.15);
+    --skill-bg: rgba(29, 103, 143, 0.08);
+}
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:"Segoe UI", Arial, sans-serif;
+    background:var(--secondary-color);
+    color:var(--text-dark);
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+/* HERO */
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    background:var(--primary-color);
+    color:var(--secondary-color);
+    padding:50px;
+    border-radius:18px;
+    margin-bottom:35px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h1{
+    margin:0;
+    font-size:40px;
+}
+
+.hero-text p{
+    margin-top:12px;
+    font-size:18px;
+    line-height:1.6;
+}
+
+/* HERO IMAGE */
+.hero-img{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.hero-img img{
+    width:260px;
+    height:260px;
+    object-fit:contain;
+    border-radius:50%;
+    border:6px solid var(--secondary-color);
+    background:var(--secondary-color);
+}
+
+/* SECTION */
+.section{
+    background:var(--secondary-color);
+    padding:35px;
+    border-radius:16px;
+    margin-bottom:30px;
+    border:1px solid var(--border-soft);
+}
+
+.section h2{
+    margin-top:0;
+    color:var(--primary-color);
+    border-left:5px solid var(--primary-color);
+    padding-left:14px;
+}
+
+/* SKILLS */
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    margin-top:20px;
+}
+
+.skill{
+    background:var(--skill-bg);
+    padding:15px 18px;
+    border-radius:12px;
+    color:var(--primary-color);
+    font-weight:500;
+}
+
+/* CONTACT */
+.contact{
+    background:var(--primary-color);
+    color:var(--secondary-color);
+    text-align:center;
+}
+
+.contact h2{
+    color:var(--secondary-color);
+    border:none;
+}
+
+.contact p{
+    font-size:16px;
+    margin:10px 0;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-text">
+        <h1>Chandrashekhar Sahu</h1>
+        <p><strong>Medical Representative</strong></p>
+        <p>
+            Dedicated and disciplined professional with pharmaceutical education and strong communication skills, focused on ethical medical promotion.
+        </p>
+    </div>
+
+    <div class="hero-img">
+        <!-- Add your photo -->
+        <img src="" alt="Chandrashekhar Sahu">
+    </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="section">
+    <h2>Professional Summary</h2>
+    <p>
+        Motivated individual with a Diploma in Pharmacy and a strong interest in pharmaceutical marketing.
+        Committed to honesty, loyalty, relationship building, and delivering best performance for organizational growth.
+    </p>
+</div>
+
+<!-- SKILLS -->
+<div class="section">
+    <h2>Core Competencies</h2>
+    <div class="skills">
+        <div class="skill">Doctor & Chemist Communication</div>
+        <div class="skill">Product Detailing</div>
+        <div class="skill">Pharmaceutical Knowledge</div>
+        <div class="skill">Professional Ethics</div>
+        <div class="skill">Time & Route Management</div>
+        <div class="skill">Relationship Building</div>
+    </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="section">
+    <h2>Education</h2>
+    <p><strong>Diploma in Pharmacy</strong> – CSVTU, Bhilai (2019–2021)</p>
+    <p>12th (Science Stream) – CG Board (2018)</p>
+    <p>10th – CG Board (2016)</p>
+</div>
+
+<!-- PERSONAL DETAILS -->
+<div class="section">
+    <h2>Personal Details</h2>
+    <p><strong>Date of Birth:</strong> 13 October 2000</p>
+    <p><strong>Gender:</strong> Male</p>
+    <p><strong>Marital Status:</strong> Unmarried</p>
+    <p><strong>Nationality:</strong> Indian</p>
+    <p><strong>Languages Known:</strong> Hindi, English</p>
+</div>
+
+<!-- CONTACT -->
+<div class="section contact">
+    <h2>Contact Information</h2>
+    <p>📧 Email: sahu13chandrashekhar@gmail.com</p>
+    <p>📍 Address:  Raipur, Chhattisgarh</p>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 90vw;
+            margin: 0 auto;display: flex;
+        }
+        .box{
+            width: 20%;
+            background-color: aqua;
+            height: 250px;
+            border-radius: 10px;
+            position: relative;
+            animation-name: slide;
+            animation-duration: 4s;
+            animation-delay: 0s;
+            animation-timing-function: ease-in-out;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+        @keyframes slide{
+            from{
+                left: 0px;
+            }
+            to{
+                left: 100vw;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"><img src="" alt=""></div>
+        <div class="box"><img src="" alt=""></div>
+        <div class="box"><img src="" alt=""></div>
+        <div class="box"><img src="" alt=""></div>
+        <div class="box"><img src="" alt=""></div>
+    </div>
+</body>
+</html>

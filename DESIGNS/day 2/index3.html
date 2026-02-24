@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 150px;
+            height: 150px;
+            border: 2px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="heading">
+    <input type="text" id="subHeading">
+    <button onclick="add()">click</button>
+    <div id="container"></div>
+    <script>
+        let cont = document.getElementById("container")
+        function add() {
+            let main = document.getElementById("heading").value
+            let sub = document.getElementById("subHeading").value
+            let card = document.createElement("div")
+            let h1 = document.createElement("h1")
+            let h3 = document.createElement("h3")
+            h1.textContent = main
+            h3.textContent = sub
+            card.className = "card"
+            cont.appendChild(card)
+            card.appendChild(h1)
+            card.appendChild(h3)
+            document.getElementById("heading").value = ""
+            document.getElementById("subHeddkkdading").value = ""
+            
+        }
+    </script>
+</body>
+
+</html>

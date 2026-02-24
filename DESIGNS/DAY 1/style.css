@@ -1,0 +1,336 @@
+/* ============ BODY ============ */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: url("bg.png") center / cover no-repeat fixed;
+  font-family: 'Assistant', sans-serif !important;
+}
+
+/* ============ NAV ============ */
+nav {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;        /* remove top margin */
+  padding: 15px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  
+}
+
+/* ============ GLASS EFFECT ============ */
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ============ LOGO ============ */
+.logo {
+  width: 60px;
+  height: 60px;
+  padding: 8px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* ============ NAV LINKS ============ */
+.navigation {
+  padding: 12px 30px;
+  transition: 0.4s ease;
+}
+
+.navigation ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.navigation a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+
+.navigation a:hover::after {
+  width: 100%;
+}
+
+/* ============ BUY BUTTON ============ */
+.buy-button {
+  padding: 12px 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.buy-button a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.buy-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ============ HAMBURGER ============ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* Hamburger Animation */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(9px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-9px);
+}
+
+/* ============ HERO SECTION ============ */
+.hero {
+  position: relative;
+  height: calc(100vh - 90px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* BIG BACKGROUND TEXT */
+.hero-text {
+  position: absolute;
+  font-size: clamp(80px, 18vw, 250px);
+  font-weight: 900;
+  letter-spacing: 20px;
+  color: white; /* soft glass text */
+  z-index: 1;
+  text-transform: uppercase;
+   font-family: "Major Mono Display", monospace;
+    position: absolute;
+  font-size: clamp(80px, 18vw, 250px);
+  font-weight: 900;
+  letter-spacing: 20px;
+  color: white;
+  z-index: 1;
+  text-transform: uppercase;
+
+    animation: textZoom 1s cubic-bezier(.17,.67,.32,1.35) forwards;
+  animation-delay: 1.3s;
+  opacity: 0;
+
+}
+
+/* BOTTLE */
+.bottle {
+  position: relative;
+  z-index: 2;
+}
+
+.bottle img {
+  width: clamp(250px, 30vw, 450px);
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+    width: clamp(250px, 30vw, 450px);
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+
+  animation: bottleUp 1.2s ease forwards;
+}
+
+/* Small hover effect */
+.bottle img:hover {
+  transform: scale(1.05);
+}
+
+/* ============ CARDS SECTION ============ */
+.cards-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  padding: 60px 0;
+  margin-top: -60px; /* overlap hero */
+}
+
+/* Card */
+.card {
+  width: 320px;
+  min-height: 240px;
+  padding: 40px;
+  border-radius: 30px;
+  text-align: center;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.05)
+  );
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+
+  transition: all 0.4s cubic-bezier(.17,.67,.32,1.35);
+
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.35),
+    inset 0 0 30px rgba(255,255,255,0.05);
+
+  opacity: 0;
+  transform: translateY(60px);
+  animation: cardReveal 1s ease forwards;
+}
+.card:nth-child(1) {
+  animation-delay: 0.8s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 1s;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+
+  .navigation {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top;
+    width: 90%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .navigation ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navigation.active {
+    transform: translateX(-50%) scaleY(1);
+  }
+
+  .buy-button {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+   .hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: visible;
+  }
+
+  /* Move text above bottle */
+  .hero-text {
+    position: relative;      /* remove absolute */
+    z-index: 2;
+    font-size: clamp(100px, 12vw, 100px);
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+  }
+
+  /* Bottle stays below */
+  .bottle {
+    z-index: 1;
+  }
+
+  .bottle img {
+    width: clamp(200px, 60vw, 350px);
+    transform: rotate(-20deg);
+
+  }
+}
+
+/* ============ ANIMATIONS ============ */
+
+/* Bottle coming from bottom */
+@keyframes bottleUp {
+  from {
+    transform: translateY(120px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* Text zoom in */
+@keyframes textZoom {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes cardReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

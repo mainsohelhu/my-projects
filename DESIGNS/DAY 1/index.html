@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Split Glass Navbar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+
+  <!-- Logo -->
+  <div class="logo glass">
+    <img src="logo1.png" alt="logo">
+  </div>
+
+  <!-- Navigation -->
+  <div class="navigation glass" id="navLinks">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Buy Button -->
+  <div class="buy-button glass">
+    <a href="#">Buy Now</a>
+  </div>
+
+  <!-- Hamburger -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+</nav>
+<section class="hero">
+
+  <h1 class="hero-text">WATER</h1>
+
+  <div class="bottle">
+    <img src="ChatGPT Image Feb 14, 2026, 02_46_07 PM.png" alt="Water Bottle">
+  </div>
+
+</section>
+<section class="cards-section">
+
+  <div class="card">
+    <h3>Pure Mineral</h3>
+    <p>Fresh and naturally filtered water sourced from the mountains.</p>
+  </div>
+
+  <div class="card">
+    <h3>Zero Sugar</h3>
+    <p>100% hydration with no additives, no chemicals, just purity.</p>
+  </div>
+
+</section>
+
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle("open");
+  });
+</script>
+
+</body>
+</html>

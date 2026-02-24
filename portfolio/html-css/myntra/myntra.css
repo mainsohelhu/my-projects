@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 30px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    box-shadow: 1px 2px 5px gainsboro;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.navul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    font-size: clamp(10px, 2vw, 16px);
+    font-weight: bold;
+    font-family: Assistant, sans-serif;
+}
+
+.search {
+    position: relative;
+    width: clamp(200px, 30vw, 500px);
+}
+
+.searchbox {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    background: rgb(245, 245, 246);
+    border: none;
+    border-radius: 4px;
+}
+
+.search i {
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    color: gray;
+    font-size: 14px;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Assistant, sans-serif;
+}
+
+.icons i,
+.icons svg {
+    font-size: 18px;
+}
+
+.off {
+    width: 95vw;
+    display: block;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.splitimg {
+    width: 95vw;
+    margin: 0 auto;
+    display: flex;
+}
+
+.split {
+    width: 50%;
+
+}
+
+.banner {
+    width: 90vw;
+    display: flex;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.banner span {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.banner img {
+    width: 100%;
+    display: block;
+}
+
+.flipBox {
+    width: 95vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.flipBox img {
+    width: 100%;
+}
+
+.cards {
+    display: flex;
+    width: 95vw;
+    margin: 0 auto;
+}
+
+.card img {
+    width: 100%;
+
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.button button {
+    border: none;
+    margin: 3px;
+    background: none;
+    color: gainsboro;
+    font-size: 30px;
+}
+
+.info {
+    width: 60vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    /* margin-top: 100px; */
+}
+
+.info ul,p{
+    list-style: none;
+    font-size: 14px;
+    font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color: gray;
+}
+.apps img{
+    display: inline;
+    width: 130px;
+    height: 40px;
+}
+.garantee img{
+    width: 50px;
+}
+.garantee p{
+    display: inline
+}
+.garantee div{
+    display: flex;
+}
+.populer{
+    width: 60vw;
+    margin: 20px auto;
+}
+.populer p{
+    display: inline;
+}
+.contact{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.background{
+    background-color: rgb(244, 248, 252);
+    padding-top: 50px;
+    margin-top: 50px;
+}

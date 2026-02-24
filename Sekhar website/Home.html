@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandra shekhar general stores</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        /* height: 100px; */
+        box-shadow: 1px 2px 10px gainsboro;
+        background-color: white;
+        color: green;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        padding: 15px;
+        z-index: 1;
+    }
+    nav h1{
+        font-size: clamp(24px, 5vw, 48px);
+    }
+    ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4vw;
+        list-style: none;
+    }
+    li a{
+        text-decoration: none;
+        color: green;
+    }
+    ul li a:hover{
+        color: black;
+    }
+    .banner{
+        margin: 10px 0 10px 0;
+    }
+    .banner,img{
+        width: 100%;
+        height: clamp(400px,10vh,400px);
+        box-sizing: border-box;
+    }
+    /* .banner img{
+        object-fit: cover;
+    } */
+    #product{
+        width: 100%;
+        display: flex;
+        gap: 2vw;
+        flex-wrap: wrap;
+        margin: 20px 0 20px 0;
+        padding: 0 10px 0 10px;
+        box-sizing: border-box;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        justify-content: center;
+        flex: 1;
+        border-radius: 10px;
+        border: 1px solid black;
+        height: 300px;
+        gap: 2vh;
+        box-shadow: 1px 2px 10px gainsboro;
+        transition-property: transform;
+        transition-duration: 0.1s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0.1s;
+
+    }
+    
+    .card:hover{
+        box-shadow: 1px 2px 10px greenyellow;
+        transform: scale(1.05);
+    }
+    .card img{
+        min-width: 200px;
+        max-width: 98%;
+        height: 150px;
+        border-radius: 10px;
+    }
+    .card button{
+        padding: 10px;
+        border-radius: 10px;
+        background-color: green;
+        color: white;
+        border-color: aquamarine;
+        width: 100px;
+    }
+    .card button:hover{
+        background-color: black;
+    }
+    #about{
+        width: 100%;
+        margin: 0 auto;
+        background-color: silver;
+        color: white;
+        padding: 20px 70px 20px 70px;
+        box-sizing: border-box;
+    }
+    #contact{
+        background-color: black;
+        color: white;
+        margin-top: 10px;
+        width: 100%;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    @media  screen and (max-width:600px) {
+        nav{
+            flex-direction: column;
+        }
+        nav ul{
+            padding: 10px;
+            background-color: green;
+            width: 100%;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+        ul li a {
+            color: white;
+        }
+        #product{
+            justify-content: center;
+        }
+        .card{
+            max-width: 80%;
+        }
+    }
+</style>
+<body>
+        <nav>
+            <div class="logo"><h1>Chandrashekhar General Store</h1></div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#product">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="banner" id="home"><img src="banner1.png" alt=""></div>
+        <div id="product">
+            <div class="card">
+                <img src="https://content.jdmagicbox.com/comp/def_content/grocery-stores/shutterstock-130707287-grocery-stores-3-tze5t.jpg" alt="">
+                <h3>grocery</h3>
+                <p>Bahut accha saman milta hai</p>
+                <button>Buy now</button>
+            </div>
+            <div class="card">
+                <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2024/06/7.jpg?quality=82&strip=1" alt="">
+                <h3>chips</h3>
+                <p>sekhar bhai ka namkin chips milta hai</p>
+                <button>Buy now</button>
+            </div>
+            <div class="card">
+                <img src="https://www.pepsnacks.com/prod/s3fs-public/2023-01/Kurkure_Hamburger.jpg" alt="">
+                <h3>kurkure</h3>
+                <p>sekhar bhai ka kurkure milata hai</p>
+                <button>Buy now</button>
+            </div>
+            <div class="card">
+                <img src="https://cdn.mos.cms.futurecdn.net/iC7HBvohbJqExqvbKcV3pP-1200-80.jpg" alt="">
+                <h3>aalu</h3>
+                <p>sekhar bhia ka aalu milta hai</p>
+                <button>Buy now</button>
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/71JupjjllGL.jpg" alt="">
+                <h3>pyaj</h3>
+                <p>sekhar bhai ka pyaj milta hai</p>
+                <button>Buy now</button>
+            </div>
+        </div>
+        <div id="product">
+            <div class="card">
+                <img src="https://content.jdmagicbox.com/comp/def_content/grocery-stores/shutterstock-130707287-grocery-stores-3-tze5t.jpg" alt="">
+                <h3>grocery</h3>
+                <p>Bahut accha saman milta hai</p>
+                <button>Buy now</button>
+            </div>
+            <div class="card">
+                <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2024/06/7.jpg?quality=82&strip=1" alt="">
+                <h3>chips</h3>
+                <p>sekhar bhai ka namkin chips milta hai</p>
+                <button>Buy now</button>
+            </div>
+            <div class="card">
+                <img src="https://www.pepsnacks.com/prod/s3fs-public/2023-01/Kurkure_Hamburger.jpg" alt="">
+                <h3>kurkure</h3>
+                <p>sekhar bhai ka kurkure milata hai</p>
+                <button>Buy now</button>
+            </div>
+            <div class="card">
+                <img src="https://cdn.mos.cms.futurecdn.net/iC7HBvohbJqExqvbKcV3pP-1200-80.jpg" alt="">
+                <h3>aalu</h3>
+                <p>sekhar bhia ka aalu milta hai</p>
+                <button>Buy now</button>
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/71JupjjllGL.jpg" alt="">
+                <h3>pyaj</h3>
+                <p>sekhar bhai ka pyaj milta hai</p>
+                <button>Buy now</button>
+            </div>
+        </div>
+        <div id="about">
+            <h2>About us</h2>
+            <p>Chandrasekhar General Stores is a trusted local shop serving the community with honesty and care. We believe in providing good-quality products at affordable prices for everyday life.</p>
+            <p>From daily groceries to household essentials, we carefully select items to meet our customers’ needs. Our goal is to make shopping easy, friendly, and reliable for everyone.</p>
+            <p>Customer satisfaction is our top priority, and we always aim to build long-term relationships based on trust and quality.</p>
+            <p><strong>Thank you for choosing Chandrasekhar General Stores — your neighborhood store you can rely on.</strong></p>
+        </div>
+        <div id="contact">
+            <h2>Contact us</h2>
+            <h4>We’d love to hear from you!</h4>
+            <p>If you have any questions, need information about our products, or want to give feedback, feel free to contact us.</p>
+            <ul>
+                <li>Address: Chandrasekhar General Stores</li>
+                <li>Phone: +91 XXXXX XXXXX</li>
+                <li>Email: example@gmail.com</li>
+            </ul>
+
+        </div>
+</body>
+</html>

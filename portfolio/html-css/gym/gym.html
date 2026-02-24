@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PowerFit Gym</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#0f0f0f;
+      color:#fff;
+      line-height:1.6;
+    }
+
+    a{ text-decoration:none; color:inherit; }
+
+    header{
+      position:fixed;
+      top:0; left:0;
+      width:100%;
+      background:rgba(0,0,0,0.8);
+      backdrop-filter:blur(6px);
+      z-index:1000;
+    }
+
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      padding:15px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:bold;
+      color:#ff3c00;
+    }
+
+    .menu{
+      display:flex;
+      gap:25px;
+    }
+
+    .menu a{
+      font-size:15px;
+      transition:0.3s;
+    }
+
+    .menu a:hover{
+      color:#ff3c00;
+    }
+
+    .hamburger{
+      display:none;
+      font-size:26px;
+      cursor:pointer;
+    }
+    .hero{
+      height:100vh;
+      background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+      url('https://images.unsplash.com/photo-1558611848-73f7eb4001a1') center/cover no-repeat;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero h1{
+      font-size:48px;
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      max-width:600px;
+      margin:auto;
+      margin-bottom:25px;
+      color:#ddd;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 30px;
+      background:#ff3c00;
+      color:#fff;
+      border-radius:30px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#e63200;
+    }
+    section{
+      padding:80px 20px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    section h2{
+      text-align:center;
+      margin-bottom:40px;
+      font-size:32px;
+      color:#ff3c00;
+    }
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#1a1a1a;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card h3{
+      margin-bottom:10px;
+      color:#ff3c00;
+    }
+
+    .pricing{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:25px;
+    }
+
+    .price-card{
+      background:#1a1a1a;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+    }
+
+    .price-card h3{
+      color:#ff3c00;
+      margin-bottom:10px;
+    }
+
+    .price{
+      font-size:36px;
+      margin:15px 0;
+    }
+
+    footer{
+      background:#000;
+      text-align:center;
+      padding:25px 10px;
+      color:#aaa;
+    }
+
+    @media(max-width:768px){
+      .menu{
+        position:absolute;
+        top:60px;
+        right:0;
+        background:#000;
+        flex-direction:column;
+        width:200px;
+        display:none;
+      }
+
+      .menu.active{
+        display:flex;
+      }
+
+      .menu a{
+        padding:15px;
+        border-bottom:1px solid #222;
+      }
+
+      .hamburger{
+        display:block;
+      }
+
+      .hero h1{
+        font-size:36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <div class="logo">PowerFit</div>
+      <div class="hamburger" id="hamburger">☰</div>
+      <div class="menu" id="menu">
+        <a href="#">Home</a>
+        <a href="#features">Programs</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Build Your Perfect Body</h1>
+      <p>Join PowerFit Gym and transform your life with professional trainers, modern equipment, and powerful motivation.</p>
+      <a href="#pricing" class="btn">Join Now</a>
+    </div>
+  </section>
+  <section id="features">
+    <h2>Why Choose Us</h2>
+    <div class="features">
+      <div class="card">
+        <h3>Modern Equipment</h3>
+        <p>High-quality machines for strength, cardio, and functional training.</p>
+      </div>
+      <div class="card">
+        <h3>Expert Trainers</h3>
+        <p>Certified trainers to guide you every step of your fitness journey.</p>
+      </div>
+      <div class="card">
+        <h3>Flexible Timings</h3>
+        <p>Workout anytime with flexible schedules that fit your lifestyle.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2>Membership Plans</h2>
+    <div class="pricing">
+      <div class="price-card">
+        <h3>Basic</h3>
+        <p class="price">₹999</p>
+        <p>Gym Access</p>
+        <p>No Trainer</p>
+      </div>
+      <div class="price-card">
+        <h3>Standard</h3>
+        <p class="price">₹1999</p>
+        <p>Gym + Cardio</p>
+        <p>Trainer Support</p>
+      </div>
+      <div class="price-card">
+        <h3>Premium</h3>
+        <p class="price">₹2999</p>
+        <p>All Access</p>
+        <p>Personal Trainer</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 PowerFit Gym. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

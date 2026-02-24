@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url(imges/tanjiro-kamado-fire-5120x2880-24474.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            background-attachment: fixed;
+        }
+        header{
+            position: sticky;
+            top: 0;
+        }
+
+        .nav-container {
+            width: 100%;
+            display: flex;
+            height: 100px;
+            border: solid;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            box-sizing: border-box;
+            background-color: black;
+            box-shadow: 1px 2px 10px aqua;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            /* margin-left: 10px; */
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: 1px 2px 10px aqua;
+        }
+
+        .nav-container ul {
+            display: flex;
+            gap: 3vw;
+            list-style: none;
+        }
+
+        .nav-container ul li,
+        a {
+            text-decoration: none;
+            color: aqua;
+        }
+
+        .nav-container ul li,
+        a:hover {
+            color: white;
+        }
+
+        .nav-container input {
+            padding: 5px;
+            width: clamp(40%, 5vw, 600px);
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            box-shadow: 1px 2px 10px aqua;
+        }
+
+        .nav-container input:focus {
+            border: 2px solid aqua;
+        }
+        .cards:hover{
+            box-shadow: 1px 2px 10px red;
+
+        }
+        @media screen and (max-width:600px){
+            .nav-container ul{
+                display: none;
+            }
+            .card-container{
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 0;
+            }
+            .cards{
+                width: 100%;
+                /* max-width: 100%; */
+            }
+        }
+        .card-container{
+            width: 98%;
+            margin: 10px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .cards{
+            flex: 1;
+            border-radius: 20px;
+            max-width: 250px;
+            background-color: aliceblue;
+            padding: 15px;
+            margin: 10px;
+            background-color: rgba(220, 220, 220, 0.459);
+            box-shadow: 1px 3px 15px aqua;
+            color: aqua;
+        }
+        .card-img{
+            display: flex;
+            justify-content: center;
+        }
+        .card-img img{
+            width: 200px;
+            height: 250px;
+            /* border-radius: 20px 20px 0 0; */
+        }
+        .detail{
+            height: px
+        }
+        button{
+            padding: 5px;
+            border-radius: 20px;
+            border-color: aqua;
+            outline: none;
+            background-color: black;
+            color: aqua;
+            box-shadow: 1px 2px 10px aqua;
+        }
+        #about{
+            background-color: rgba(0, 255, 255, 0.322);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .contact{
+            background-color: black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo"><img src="imges/final-logo.png" alt=""></div>
+            <input type="text" placeholder="Search">
+            <ul>
+                <li><a href="home-page.html">Home</a></li>
+                <li><a href="anime-list.html">Anime List</a></li>
+                <li><a href="characters.html">Characters</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button><a href="login.html">Log in</a></button></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="card-container">
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/demon slayer.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Demon Slayer</h3>
+                    <p>Genre: Dark Fantasy, Action, Adventure, Supernatural.</p>
+                    <button><a href="">More...</a></button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/attack on titan.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Attack on Titan</h3>
+                    <p>Genre: Dark Fantasy, Action, Mystery, Post-Apocalyptic, Thriller.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/naruto shippudin.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Naruto / Naruto Shippuden</h3>
+                    <p>Genre: Action, Adventure, Ninja, Fantasy, Coming-of-Age.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/one piece.webp" alt=""></div>
+                <div class="details">
+                    <h3>One Piece</h3>
+                    <p>Genre: Adventure, Fantasy, Action, Comedy, Pirates.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/db super.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Dragon Ball Z / Super</h3>
+                    <p>Genre: Action, Martial Arts, Adventure, Supernatural, Sci-Fi.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/jujutsu kaisen.webp" alt=""></div>
+                <div class="details">
+                    <h3>Jujutsu Kaisen</h3>
+                    <p>Genre: Dark Fantasy, Action, Supernatural, Horror.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/my hero academia.jpg" alt=""></div>
+                <div class="details">
+                    <h3>My Hero Academia</h3>
+                    <p>Genre: Superhero, Action, Fantasy, School, Shonen.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/death notw.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Death Note</h3>
+                    <p>Genre: Psychological Thriller, Mystery, Supernatural, Crime.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/full metal.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Fullmetal Alchemist: Brotherhood</h3>
+                    <p>Genre: Dark Fantasy, Adventure, Steampunk, Action, Drama.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/tokyo ghoul.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Tokyo Ghoul</h3>
+                    <p>Genre: Dark Fantasy, Horror, Action, Psychological.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/bleach.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Bleach & Bleach: Thousand-Year Blood War</h3>
+                    <p>Genre: Action, Supernatural, Adventure, Shonen, Fantasy.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/hunter x hunter.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Hunter x Hunter</h3>
+                    <p>Genre: Adventure, Action, Fantasy, Shonen, Supernatural.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/chainsaw man.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Chainsaw Man</h3>
+                    <p>Genre: Dark Fantasy, Action, Horror, Supernatural, Thriller.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/sword art online.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Sword Art Online</h3>
+                    <p>Genre: Action, Adventure, Fantasy, Romance, Sci-Fi, Isekai.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/one punch man.jpg" alt=""></div>
+                <div class="details">
+                    <h3>One Punch Man</h3>
+                    <p>Genre: Action, Comedy, Superhero, Parody, Shonen.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/haikuii.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Haikyuu!!</h3>
+                    <p>Genre: Sports, Comedy, Drama, School, Shonen.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/black clover.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Black Clover</h3>
+                    <p>Genre: Action, Fantasy, Adventure, Magic, Shonen.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/mob psycho 100.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Mob Psycho 100</h3>
+                    <p>Genre: Action, Comedy, Supernatural, Slice of Life, Superpowered.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/a silent voice.jpg" alt=""></div>
+                <div class="details">
+                    <h3>A Silent Voice (Movie)</h3>
+                    <p>Genre: Drama, Romance, Slice of Life, School, Emotional.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/your name.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Your Name (Movie)</h3>
+                    <p>Genre: Romance, Fantasy, Drama, Supernatural, School.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/spy x family.jpg" alt=""></div>
+                <div class="details">
+                    <div class="detail">
+                    <h3>Spy × Family</h3>
+                    <p>Genre: Action, Comedy, Slice of Life, Spy, Family.</p>
+                    </div>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/blue lock.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Blue Lock</h3>
+                    <p>Genre: Sports, Drama, Psychological, Soccer, Shonen.</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img"><img src="anime-images/vinland saga.jpg" alt=""></div>
+                <div class="details">
+                    <h3>Vinland Saga</h3>
+                    <p>Genre: Historical, Action, Drama, Adventure, Seinen.e</p>
+                    <button>More...</button>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    <footer id="contact">
+        <div id="about">
+            <h3>⭐ About Anifo</h3>
+            <p><strong>Anifo</strong> is a vibrant home for anime lovers, created to celebrate the worlds, characters, and stories that make anime unforgettable. Whether you're a longtime otaku or just starting your anime journey, Anifo brings you everything you need—fresh recommendations, character spotlights, trending updates, and curated lists from every genre.</p>
+            <p>We built Anifo with one mission: to make exploring anime simple, fun, and exciting.
+            From action-packed shonen to heart-melting romance, from classics to the newest seasonal releases—Anifo is here to help you discover your next favorite show.</p>
+            <p>At Anifo, we believe anime is more than entertainment—it’s art, emotion, and a community. That’s why we aim to deliver content that feels personal, relatable, and crafted especially for fans like you.</p>
+            <p>Welcome to <strong>Anifo</strong></p>
+                <p>Where every anime story begins.</p>
+                <div class="contact">
+                    <h3>⭐ Contact Us</h3>
+                    <p>Have a question, suggestion, or want to collaborate with <strong>Anifo?</strong></p>
+                    <p>We’d love to hear from you!</p>
+                    <h4>Email: support@anifo.com</h4>
+                    <h4>Website: www.anifo.com</h4>
+                    <h4>Instagram: @anifo.official</h4>
+                    <h4>Twitter (X): @anifo_anime</h4>
+                    <h4>Feedback Form: (Add your contact form link here)</h4>
+                    <p>We reply as fast as possible—your thoughts help us make Anifo better for every anime fan!</p>
+                </div>
+        </div>
+    </footer>
+</body>
+
+</html>

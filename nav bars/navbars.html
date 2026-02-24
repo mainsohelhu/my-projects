@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            background-color: black;
+            margin: 0;
+            padding: 2px;
+            height: 50px;
+        }
+    .main{
+        display: flex;
+        gap: 20px;
+        justify-self: center;
+        /* resize: horizontal; */
+        flex-wrap: wrap;
+        list-style: none;
+        color: whitesmoke;
+        /* background-color: aqua; */
+    }
+    ul{
+        display: none;
+        list-style: none;
+    }
+    .main li:hover ul{
+        display: block;
+        background-color: white;
+        color: black;
+        align-self: center;
+        padding: 20px;
+        padding-top: 0;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px;
+        width: 200px;
+        /* position: fixed; */
+    }
+    .main li:hover ul li{
+        padding: 3px;
+        border-bottom: 1px solid gray;
+    }
+    .main li ul li:hover{
+        color: red;
+        padding: 10px;
+        font-size: 20px;
+        
+
+         
+    }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul class="main">
+            <li>HOME 
+                <ul>
+                    <li>HOME1</li>
+                    <li>HOME2</li>
+                    <li>HOME3</li>
+                </ul>
+            </li>
+            <li>MAIN
+                <ul>
+                    <li>MAIN1</li>
+                    <li>MAIN2</li>
+                    <li>MAIN3</li>
+                </ul>
+            </li>
+            <li>CONTACT
+                <ul>
+                    <li>CONTACT1</li>
+                    <li>CONTACT2</li>
+                    <li>CONTACT3</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 2px solid;
+            padding: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="box">Hey i am a box</div>
+    <div class="box">Hey i am a box</div>
+    <div class="box">Hey i am a box</div>
+    <div class="box">Hey i am a box</div>
+    <div class="box">Hey i am a box</div>
+    </div>
+    <button id="btn">click to alert</button>
+    <script>
+        // let boxes = document.querySelector(".container").children;
+        // function randomColor() {
+        //     let value1 = Math.floor(0 + Math.random()* 255)
+        //     let value2 = Math.floor(0 + Math.random()* 255)
+        //     let value3 = Math.floor(0 + Math.random()* 255)
+        //     return `rgb(${value1}, ${value2},${value3})`
+        // }
+        // Array.from(boxes).forEach(box =>{
+        //     box.style.backgroundColor = randomColor();
+        //     box.style.color = randomColor();
+        // })
+
+        let bx = document.getElementsByClassName("box")
+        function color() {
+            let val1 = Math.floor(0 + Math.random()* 256  )
+            let val3 = Math.floor(0 + Math.random()* 256  )
+            let val2 = Math.floor(0 + Math.random()* 256  )
+            return `rgb(${val1},${val3},${val2})`
+        }
+        Array.from(bx).forEach (box => {
+            box.style.backgroundColor = color()
+            box.style.color = color()
+        })
+        let buttotn = document.getElementById("btn")
+        buttotn.addEventListener("click", ()=>{
+            Array.from(bx).forEach(box =>{
+                box.innerHTML = " i am changed";
+            })
+            alert("refresh to change color")
+            buttotn.style.cssText = `
+            color: red;
+            backgroundColor : black;
+            padding : 15px;
+            `
+        })
+    </script>
+</body>
+</html>

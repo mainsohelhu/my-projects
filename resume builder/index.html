@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Professional Resume Builder</h1>
+    <p>Create your sleek modern resume in minutes</p>
+  </header>
+
+  <section class="form-section">
+    <h2>Fill Your Details</h2>
+    <div class="form">
+      <input type="file" id="photo" accept="image/*">
+      <input type="text" id="name" placeholder="Full Name">
+      <input type="text" id="email" placeholder="Email">
+      <input type="text" id="phone" placeholder="Phone">
+      <textarea id="education" placeholder="Education (One per line)"></textarea>
+      <textarea id="experience" placeholder="Experience (One per line)"></textarea>
+      <textarea id="skills" placeholder="Skills (comma separated)"></textarea>
+      <textarea id="projects" placeholder="Projects (One per line)"></textarea>
+      <textarea id="certifications" placeholder="Certifications / Achievements"></textarea>
+
+      <label for="colorPicker">Choose Accent Color:</label>
+      <input type="color" id="colorPicker" value="#27ae60">
+
+      <button onclick="generateResume()">Generate Resume</button>
+    </div>
+  </section>
+
+  <section id="resumePreview" class="resume-preview">
+    <div id="resumeContent"></div>
+    <button onclick="downloadResume()">Download PDF</button>
+  </section>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+</body>
+</html>

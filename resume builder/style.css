@@ -1,0 +1,138 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f7f8;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: linear-gradient(90deg,#2ecc71,#27ae60);
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.form-section, .resume-preview {
+  max-width: 900px;
+  margin: 20px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+input, textarea, button {
+  width: 100%;
+  margin: 7px 0;
+  padding: 10px;
+  border-radius: 7px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+textarea {
+  min-height: 60px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Resume Preview */
+.resume-preview {
+  display: none;
+}
+
+/* A4 Layout */
+.resume-container {
+  display: flex;
+  flex-direction: row;
+  width: 210mm;   /* A4 width */
+  height: 297mm;  /* A4 height */
+  margin: 0 auto;
+  border: 2px solid var(--accent-color, #27ae60);
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-size: 14px;
+  background: white;
+}
+
+.resume-sidebar {
+  width: 250px;
+  padding: 20px;
+  background: var(--accent-color, #27ae60);
+  color: white;
+  box-sizing: border-box;
+}
+
+.resume-sidebar img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.resume-sidebar h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.resume-sidebar h3 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+  padding-bottom: 3px;
+}
+
+.resume-sidebar p {
+  font-size: 14px;
+  margin: 3px 0;
+}
+
+.resume-main {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.resume-main h2 {
+  color: var(--accent-color, #27ae60);
+  border-bottom: 2px solid var(--accent-color, #27ae60);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.resume-section {
+  margin-bottom: 15px;
+}
+
+.resume-section h3 {
+  color: var(--accent-color, #27ae60);
+  margin-bottom: 5px;
+}
+
+.skill-bar {
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.skill-bar div {
+  height: 15px;
+  background: white;
+  color: black;
+  width: 0%;
+  transition: width 0.5s;
+  text-align: right;
+  padding-right: 5px;
+  font-size: 12px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form" id="contactForm">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="E-mail" required>
+  <textarea name="message" placeholder="Message" required></textarea>
+  <button type="submit">Send Email</button>
+</form>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("OXnkQF1fhvwP9zG6g");
+  })();
+</script>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault(); // stop page refresh
+
+  emailjs.sendForm(
+    "service_65tvp7d",
+    "template_nbk9lal",
+    this
+  ).then(() => {
+    alert("Email sent successfully!");
+    this.reset();
+  }, (error) => {
+    alert("Failed to send email");
+    console.log(error);
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .coursel{
+            margin: 100px auto;
+            width: 90%;
+            border: 5px solid;
+            display: flex;
+            overflow-x: auto;
+        }
+        .coursel::-webkit-scrollbar{
+            display: none;
+        }
+        .cards{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            animation: spin 5s infinite linear;
+            padding-right: 1rem
+        }
+        .card{
+            height: 5rem;
+            background-color: aqua;
+            flex: 0 0 5rem;
+            font-size: 3rem;
+            padding: 1rem;
+            align-content: center;
+        }
+        @keyframes spin {
+            from{
+                translate: 0;
+            }to{
+                translate: -100%;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="coursel">
+        <div class="cards">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+        <div aria-hidden="" class="cards">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </div>
+</body>
+</html>

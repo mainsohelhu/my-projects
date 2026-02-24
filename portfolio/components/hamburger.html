@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #222;
+    color: white;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hamburger {
+    display: none; /* Hidden on desktop */
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* For small screens */
+@media (max-width: 768px) {
+    .nav ul {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        gap: 10px;
+        background-color: #222;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    .nav ul.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+    <div class="nav">
+        <h1>SOHEL</h1>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">☰</div>
+
+        <!-- Menu -->
+        <ul id="menu">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
+
+hamburger.addEventListener("click", () => {
+    menu.classList.toggle("active"); // Toggle the menu
+});
+
+    </script>
+</body>
+</html>
