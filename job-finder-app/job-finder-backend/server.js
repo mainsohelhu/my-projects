@@ -5,14 +5,15 @@ const cors = require('cors')
 const User = require('./models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
-const JWT_SECRET = "bhai_ka_secret_key_123";
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const app = express();
 app.use(cors())
 app.use(express.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/jobfinder')
+mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
     console.log("✅ mongoDB connected");
 })
@@ -105,7 +106,7 @@ app.post('/api/auth/login', async (req, res) => {
   }
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`);
 });
