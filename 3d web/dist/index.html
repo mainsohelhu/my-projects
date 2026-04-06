@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETHAN | Core Intelligence</title>
+  <script type="module" crossorigin src="/assets/index-BWO6GF2l.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B6xzH1gL.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 3D CORE OBJECT -->
+        <canvas id="webgl"></canvas>
+
+        <!-- ETHAN HOLOGRAPHIC HUD -->
+        <div class="hud-container">
+            <div class="hud-top-bar">
+                <div class="status-indicator">
+                    <span class="dot pulse"></span>
+                    <span id="statusText">ETHAN // STANDBY</span>
+                </div>
+                <div class="system-stats">
+                    <span>CORES: ACTIVE</span>
+                    <span>LATENCY: 12ms</span>
+                </div>
+            </div>
+
+            <div class="hud-main">
+                <div id="voiceControl" class="voice-trigger">
+                    <div class="pulse-ring"></div>
+                    <div class="mic-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                            <line x1="8" y1="23" x2="16" y2="23"></line>
+                        </svg>
+                    </div>
+                </div>
+                <p id="subtitles" class="subtitles">Tap to speak with Ethan</p>
+            </div>
+
+            <div class="hud-sidebar">
+                <div class="chat-log" id="chatLog">
+                    <!-- Dynamic logs will appear here -->
+                </div>
+                <div class="settings-panel">
+                    <input type="password" id="keyInput" placeholder="Enter Groq Key" value="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">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+</body>
+</html>

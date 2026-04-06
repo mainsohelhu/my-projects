@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETHAN | Core Intelligence</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 3D CORE OBJECT -->
+        <canvas id="webgl"></canvas>
+
+        <!-- ETHAN HOLOGRAPHIC HUD V6.0 -->
+        <div class="hud-container">
+            <!-- Left Side: Session Management -->
+            <aside class="hud-panel left-panel">
+                <div class="panel-header">
+                    <button id="newChatBtn" class="primary-btn">+ NEW CHAT</button>
+                </div>
+                <div class="sessions-list" id="sessionsList">
+                    <!-- Previous chats appear here -->
+                </div>
+                <div class="panel-footer">
+                    <div id="voiceControl" class="voice-trigger mini">
+                        <div class="pulse-ring"></div>
+                        <div class="mic-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                <line x1="12" y1="19" x2="12" y2="23"></line>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Center Stage: Core Product Interaction -->
+            <main class="hud-center-stage">
+                <div class="hud-top-bar">
+                    <div class="status-indicator">
+                        <span class="dot pulse"></span>
+                        <span id="statusText">ETHAN // PERSONAL_INTELLIGENCE // ONLINE</span>
+                    </div>
+                    <div id="resizeBtn" class="hud-icon-btn" title="Toggle Chat Size">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                        </svg>
+                    </div>
+                    <div id="shareLinkedIn" class="hud-icon-btn linkedin" title="Transmit to LinkedIn Network">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="chat-viewport" data-lenis-prevent>
+                    <div class="chat-log" id="chatLog">
+                        <!-- Centered Production Logs -->
+                        <div class="log-entry ai-log">
+                            All systems online, Sohel. What do you need?
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hud-input-area">
+                    <p id="subtitles" class="subtitles">ONLINE & STANDING BY</p>
+                    <div class="hud-bottom-input">
+                        <div class="input-glow"></div>
+                        <input type="text" id="cmdInput" placeholder="Talk to Ethan..." autocomplete="off">
+                    </div>
+                </div>
+            </main>
+
+            <!-- Right side: Stats & Local Sync -->
+            <aside class="hud-panel right-panel">
+                <div class="system-stats">
+                    <div class="stat-group">
+                        <span class="stat-label">Neural Core</span>
+                        <span class="stat-value">PERSONAL_INTELLIGENCE</span>
+                    </div>
+                    
+                    <div class="stat-group">
+                        <span class="stat-label">Network Latency</span>
+                        <span class="stat-value">8ms</span>
+                    </div>
+
+                    <div class="stat-group">
+                        <span class="stat-label">Offline Brain</span>
+                        <div class="local-sync-wrap">
+                            <label class="toggle-label">LOCAL CORE</label>
+                            <input type="checkbox" id="localToggle" class="hud-toggle">
+                        </div>
+                        <span id="localStatus" class="status-badge offline">OFFLINE</span>
+                    </div>
+                </div>
+
+                <div class="settings-panel">
+                    <div class="stat-group" style="align-items: center; margin-bottom: 0.5rem;">
+                        <span class="stat-label">Neural Access Key</span>
+                    </div>
+                    <input type="password" id="keyInput" class="hud-key-input" placeholder="••••••••••••••" value="">
+                </div>
+            </aside>
+
+            <!-- V5.0/6.0 Neural Waveform (High-Density Core) -->
+            <div id="neural-visualizer" class="neural-vis">
+                <!-- Outer 10 (Left) -->
+                <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                <!-- Inner 20 (Center) -->
+                <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                <!-- Outer 10 (Right) -->
+                <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script type="module" src="main.js"></script>
+    <script type="module" src="ai-assistant.js"></script>
+</body>
+</html>
