@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, User as UserIcon, LogOut, LayoutDashboard, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import EnquiryFormModal from "@/components/forms/EnquiryFormModal";
 
@@ -16,7 +16,6 @@ const navLinks = [
 ];
 
 import { logoutUser } from "@/app/actions";
-import { User as UserIcon, LogOut, LayoutDashboard } from "lucide-react";
 
 import { useSiteTheme } from "@/components/providers/SiteThemeProvider";
 
