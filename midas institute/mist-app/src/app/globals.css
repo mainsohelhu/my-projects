@@ -1,0 +1,549 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #a3e635;
+  --color-primary-dark: #65a30d;
+  
+  --font-inter: var(--font-inter), sans-serif;
+  --font-outfit: var(--font-outfit), sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.5; filter: blur(10px); }
+  50% { opacity: 1; filter: blur(15px); }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #050505;
+  --text-dim: #4b5563;
+  --bg-deep: #f8fafc;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  
+  /* Purple Dark */
+  --pd-bg:        #090510;
+  --pd-surface:   #12081c;
+  --pd-card:      #1a0c28;
+  --pd-border:    rgba(139, 92, 246, 0.2);
+  --pd-accent:    #8b5cf6;
+  --pd-accent2:   #6d28d9;
+  --pd-text:      #f3f0ff;
+  --pd-subtext:   #a78bfa;
+  --pd-muted:     #6d5f8b;
+
+  /* Red White */
+  --rw-bg:        #ffffff;
+  --rw-surface:   #fff1f2;
+  --rw-card:      #ffffff;
+  --rw-border:    rgba(225, 29, 72, 0.15);
+  --rw-accent:    #e11d48;
+  --rw-accent2:   #be123c;
+  --rw-text:      #0f172a;
+  --rw-subtext:   #475569;
+  --rw-muted:     #94a3b8;
+}
+
+/* ---------- THEME VARIABLE INJECTIONS ---------- */
+html.theme-purple-dark {
+  --color-primary: var(--pd-accent);
+  --color-primary-dark: var(--pd-accent2);
+  --background: var(--pd-bg);
+  --foreground: var(--pd-text);
+  --text-dim: var(--pd-subtext);
+  --bg-deep: var(--pd-surface);
+  --glass-bg: rgba(26, 12, 40, 0.8);
+  --glass-border: var(--pd-border);
+}
+
+html.theme-red-white {
+  --color-primary: var(--rw-accent);
+  --color-primary-dark: var(--rw-accent2);
+  --background: var(--rw-bg);
+  --foreground: var(--rw-text);
+  --text-dim: var(--rw-subtext);
+  --bg-deep: var(--rw-surface);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: var(--rw-border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-outfit);
+}
+
+.glass-morphism {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--color-primary) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.bg-bg-deep  { background-color: var(--bg-deep); }
+.text-text-dim { color: var(--text-dim); }
+
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ================================================================
+   PURPLE-DARK THEME
+   ================================================================ */
+html.theme-purple-dark {
+  background-color: var(--pd-bg);
+  color: var(--pd-text);
+}
+html.theme-purple-dark body {
+  background-color: var(--pd-bg);
+  color: var(--pd-text);
+}
+
+
+/* ---------- BACKGROUNDS ---------- */
+html.theme-purple-dark .bg-white,
+html.theme-purple-dark .bg-white\/80,
+html.theme-purple-dark .bg-white\/50,
+html.theme-purple-dark .bg-white\/30,
+html.theme-purple-dark .bg-white\/20,
+html.theme-purple-dark .bg-white\/10,
+html.theme-purple-dark .bg-zinc-900,
+html.theme-purple-dark .bg-zinc-950,
+html.theme-purple-dark .bg-slate-900 {
+  background-color: var(--pd-card) !important;
+}
+
+html.theme-purple-dark .bg-transparent {
+  background-color: transparent !important;
+}
+
+html.theme-purple-dark .bg-slate-50,
+html.theme-purple-dark .bg-slate-50\/30,
+html.theme-purple-dark .bg-slate-50\/50,
+html.theme-purple-dark .\[\#fcfcfc\],
+html.theme-purple-dark .\[\#f8fafc\] {
+  background-color: var(--pd-surface) !important;
+}
+
+html.theme-purple-dark .bg-slate-100 {
+  background-color: #1a082a !important;
+}
+
+html.theme-purple-dark .bg-slate-200 {
+  background-color: #2a0c4a !important;
+}
+
+html.theme-purple-dark .bg-black {
+  background-color: #0a0305 !important;
+}
+
+html.theme-purple-dark .bg-black\/20,
+html.theme-purple-dark .bg-black\/95 {
+  background-color: rgba(13, 6, 8, 0.95) !important;
+}
+
+/* ---------- TEXT COLORS ---------- */
+html.theme-purple-dark .text-slate-900,
+html.theme-purple-dark .text-slate-800,
+html.theme-purple-dark .text-white {
+  color: var(--pd-text) !important;
+}
+
+html.theme-purple-dark .text-slate-700,
+html.theme-purple-dark .text-slate-600 {
+  color: #b7a2d4 !important;
+}
+
+html.theme-purple-dark .text-slate-500 {
+  color: var(--pd-subtext) !important;
+}
+
+html.theme-purple-dark .text-slate-400 {
+  color: var(--pd-muted) !important;
+}
+
+html.theme-purple-dark .text-black {
+  color: var(--pd-bg) !important;
+}
+
+/* ---------- PRIMARY/ACCENT (lime → violet) ---------- */
+html.theme-purple-dark .text-primary,
+html.theme-purple-dark .text-lime-400,
+html.theme-purple-dark .group-hover\:text-primary:hover {
+  color: var(--pd-accent) !important;
+}
+
+html.theme-purple-dark .bg-primary {
+  background-color: var(--pd-accent) !important;
+}
+
+html.theme-purple-dark .bg-primary\/10,
+html.theme-purple-dark .bg-primary\/20,
+html.theme-purple-dark .bg-primary\/5 {
+  background-color: rgba(139, 92, 246, 0.12) !important;
+}
+
+html.theme-purple-dark .border-primary,
+html.theme-purple-dark .border-primary\/20,
+html.theme-purple-dark .border-primary\/10,
+html.theme-purple-dark .border-primary\/50 {
+  border-color: rgba(139, 92, 246, 0.35) !important;
+}
+
+html.theme-purple-dark .hover\:bg-primary:hover,
+html.theme-purple-dark .group-hover\:bg-primary:hover {
+  background-color: var(--pd-accent) !important;
+  color: #ffffff !important;
+}
+
+html.theme-purple-dark .hover\:text-primary:hover {
+  color: var(--pd-accent) !important;
+}
+
+html.theme-purple-dark .shadow-primary\/20,
+html.theme-purple-dark .shadow-primary\/30 {
+  --tw-shadow-color: rgba(139, 92, 246, 0.25) !important;
+}
+
+/* ---------- BORDERS ---------- */
+html.theme-purple-dark .border-slate-50,
+html.theme-purple-dark .border-slate-100,
+html.theme-purple-dark .border-slate-200,
+html.theme-purple-dark .border-slate-300,
+html.theme-purple-dark .border-white\/10 {
+  border-color: var(--pd-border) !important;
+}
+
+html.theme-purple-dark .border-black\/5 {
+  border-color: rgba(139, 92, 246, 0.15) !important;
+}
+
+html.theme-purple-dark .divide-slate-100 > * + * {
+  border-color: var(--pd-border) !important;
+}
+
+/* ---------- GLASS MORPHISM ---------- */
+html.theme-purple-dark .glass-morphism,
+html.theme-purple-dark .glass-card {
+  background: rgba(139, 92, 246, 0.07) !important;
+  border-color: var(--pd-border) !important;
+  box-shadow: 0 4px 30px rgba(139, 92, 246, 0.08) !important;
+}
+
+/* ---------- NAVBAR ---------- */
+html.theme-purple-dark header.fixed {
+  background-color: rgba(9, 5, 16, 0.85) !important;
+  border-color: var(--pd-border) !important;
+}
+
+/* ---------- FOOTER ---------- */
+html.theme-purple-dark footer {
+  background-color: var(--pd-surface) !important;
+  border-color: var(--pd-border) !important;
+}
+
+/* ---------- SECTIONS / PAGES ---------- */
+html.theme-purple-dark section,
+html.theme-purple-dark main > * {
+  background-color: var(--pd-bg);
+}
+
+html.theme-purple-dark section.bg-white,
+html.theme-purple-dark section.bg-slate-50,
+html.theme-purple-dark section.bg-slate-900,
+html.theme-purple-dark section.\[\#f8fafc\] {
+  background-color: var(--pd-bg) !important;
+}
+
+/* Hero section */
+html.theme-purple-dark section.min-h-screen.bg-white {
+  background-color: var(--pd-bg) !important;
+}
+
+/* ---------- TEXT GRADIENT ---------- */
+html.theme-purple-dark .text-gradient {
+  background: linear-gradient(135deg, #f3f0ff 0%, var(--pd-accent) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* ---------- BUTTONS ---------- */
+html.theme-purple-dark .bg-black.text-white,
+html.theme-purple-dark a.bg-black,
+html.theme-purple-dark button.bg-black {
+  background-color: var(--pd-surface) !important;
+  color: var(--pd-text) !important;
+  border: 1px solid var(--pd-border) !important;
+}
+
+html.theme-purple-dark button.hover\:bg-black:hover,
+html.theme-purple-dark a.hover\:bg-black:hover,
+html.theme-purple-dark button.hover\:bg-slate-800:hover {
+  background-color: var(--pd-accent2) !important;
+  color: #ffffff !important;
+}
+
+/* ---------- CARDS & PANELS ---------- */
+html.theme-purple-dark .rounded-\[40px\].bg-white,
+html.theme-purple-dark .rounded-3xl.bg-white,
+html.theme-purple-dark .rounded-2xl.bg-white,
+html.theme-purple-dark .rounded-\[2\.5rem\].bg-white,
+html.theme-purple-dark .rounded-\[2rem\].bg-white {
+  background-color: var(--pd-card) !important;
+}
+
+/* ---------- INPUTS ---------- */
+html.theme-purple-dark input,
+html.theme-purple-dark textarea,
+html.theme-purple-dark select {
+  background-color: var(--pd-surface) !important;
+  color: var(--pd-text) !important;
+  border-color: var(--pd-border) !important;
+}
+
+html.theme-purple-dark input::placeholder,
+html.theme-purple-dark textarea::placeholder {
+  color: var(--pd-muted) !important;
+}
+
+/* ---------- TABLES ---------- */
+html.theme-purple-dark table {
+  background-color: var(--pd-card) !important;
+}
+
+html.theme-purple-dark th {
+  background-color: var(--pd-surface) !important;
+  color: var(--pd-subtext) !important;
+  border-color: var(--pd-border) !important;
+}
+
+html.theme-purple-dark td {
+  color: var(--pd-text) !important;
+  border-color: var(--pd-border) !important;
+}
+
+html.theme-purple-dark tr:hover td {
+  background-color: rgba(139, 92, 246, 0.05) !important;
+}
+
+/* ---------- SCROLLBAR ---------- */
+html.theme-purple-dark ::-webkit-scrollbar-track {
+  background: var(--pd-surface);
+}
+html.theme-purple-dark ::-webkit-scrollbar-thumb {
+  background: var(--pd-accent2);
+  border-radius: 4px;
+}
+
+/* ---------- HOVER LIFT ---------- */
+html.theme-purple-dark .hover-lift:hover {
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.18) !important;
+}
+
+/* ---------- MOBILE MENU PANEL ---------- */
+html.theme-purple-dark .fixed.bg-white {
+  background-color: var(--pd-card) !important;
+}
+
+/* ---------- MODALS / DIALOGS ---------- */
+html.theme-purple-dark [role="dialog"],
+html.theme-purple-dark .modal,
+html.theme-purple-dark .backdrop-blur-xl,
+html.theme-purple-dark .backdrop-blur-2xl {
+  background-color: var(--pd-card) !important;
+}
+
+/* ---------- BADGES / TAGS ---------- */
+html.theme-purple-dark .bg-green-50,
+html.theme-purple-dark .bg-green-500 { background-color: rgba(139, 92, 246, 0.08) !important; }
+html.theme-purple-dark .text-green-700,
+html.theme-purple-dark .text-green-600 { color: #a78bfa !important; }
+html.theme-purple-dark .border-green-200 { border-color: rgba(139, 92, 246, 0.3) !important; }
+
+/* ---------- STAT NUMBERS ---------- */
+html.theme-purple-dark .text-3xl.text-slate-900,
+html.theme-purple-dark .text-4xl.text-slate-900,
+html.theme-purple-dark .text-5xl.text-slate-900,
+html.theme-purple-dark .text-6xl.text-slate-900 {
+  color: var(--pd-text) !important;
+}
+
+/* ================================================================
+   CAROUSEL (BenefitsSection) PURPLE-DARK OVERRIDES
+   ================================================================ */
+
+html.theme-purple-dark .carousel-fade-left {
+  background: linear-gradient(to right, var(--pd-bg), transparent) !important;
+}
+html.theme-purple-dark .carousel-fade-right {
+  background: linear-gradient(to left, var(--pd-bg), transparent) !important;
+}
+
+html.theme-purple-dark .carousel-benefit-card {
+  background-color: var(--pd-card) !important;
+  border-color: var(--pd-border) !important;
+}
+html.theme-purple-dark .carousel-benefit-card:hover {
+  background-color: var(--pd-surface) !important;
+  border-color: rgba(139, 92, 246, 0.4) !important;
+  box-shadow: 0 20px 60px rgba(139, 92, 246, 0.15) !important;
+}
+
+html.theme-purple-dark .carousel-benefit-text {
+  color: var(--pd-text) !important;
+}
+
+html.theme-purple-dark .carousel-benefit-badge {
+  color: rgba(139, 92, 246, 0.08) !important;
+}
+
+/* ================================================================
+   HERO SECTION PURPLE-DARK OVERRIDES
+   ================================================================ */
+
+html.theme-purple-dark .hero-glow-orb {
+  display: block;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 40%, rgba(139, 92, 246, 0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 20% 80%, rgba(109, 40, 217, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 80%, rgba(109, 40, 217, 0.15) 0%, transparent 60%);
+}
+
+/* ================================================================
+   GENERAL BACKGROUND GLOWS PURPLE-DARK OVERRIDES
+   ================================================================ */
+
+html.theme-purple-dark .theme-bg-glow {
+  background-color: rgba(139, 92, 246, 0.08) !important;
+}
+
+/* Fixed Blue Glow in Trainer Details */
+html.theme-purple-dark .theme-banner-blur {
+  filter: blur(60px) grayscale(1) !important;
+  opacity: 0.15 !important;
+}
+html.theme-purple-dark .theme-banner-overlay {
+  background-color: rgba(139, 92, 246, 0.15) !important;
+}
+
+/* Specific for Trainer Detail Page images */
+html.theme-purple-dark .border-\[6px\].border-white {
+  border-color: var(--pd-card) !important;
+}
+
+
+/* ================================================================
+   RED-WHITE THEME (Clean Light Mode with Red Accents)
+   ================================================================ */
+
+html.theme-red-white {
+  background-color: var(--rw-bg);
+  color: var(--rw-text);
+}
+
+/* ---------- PRIMARY/ACCENT (lime → crimson) ---------- */
+html.theme-red-white .text-primary,
+html.theme-red-white .text-lime-400,
+html.theme-red-white .group-hover\:text-primary:hover,
+html.theme-red-white .hover\:text-primary:hover {
+  color: var(--rw-accent) !important;
+}
+
+html.theme-red-white .bg-primary {
+  background-color: var(--rw-accent) !important;
+  color: white !important;
+}
+
+html.theme-red-white .bg-primary\/10,
+html.theme-red-white .bg-primary\/20,
+html.theme-red-white .bg-primary\/5,
+html.theme-red-white .bg-lime-400\/10 {
+  background-color: rgba(225, 29, 72, 0.08) !important;
+}
+
+html.theme-red-white .border-primary,
+html.theme-red-white .border-lime-400,
+html.theme-red-white .border-primary\/20 {
+  border-color: var(--rw-accent) !important;
+}
+
+html.theme-red-white .hover\:bg-primary:hover,
+html.theme-red-white .group-hover\:bg-primary:hover {
+  background-color: var(--rw-accent) !important;
+  color: white !important;
+}
+
+html.theme-red-white .text-gradient {
+  background: linear-gradient(135deg, #0f172a 0%, var(--rw-accent) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* ---------- BUTTONS ---------- */
+html.theme-red-white button.bg-black,
+html.theme-red-white a.bg-black {
+  background-color: var(--rw-accent) !important;
+  border-color: var(--rw-accent) !important;
+  color: white !important;
+}
+
+html.theme-red-white button.bg-black:hover,
+html.theme-red-white a.bg-black:hover,
+html.theme-red-white button.hover\:bg-black:hover,
+html.theme-red-white a.hover\:bg-black:hover {
+  background-color: var(--rw-accent2) !important;
+  color: white !important;
+}
+
+/* ---------- GLASS MORPHISM ---------- */
+html.theme-red-white .glass-morphism,
+html.theme-red-white .glass-card {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(225, 29, 72, 0.1) !important;
+}
+
+/* ---------- SHADOWS ---------- */
+html.theme-red-white .shadow-primary\/30,
+html.theme-red-white .shadow-primary\/20 {
+  --tw-shadow-color: rgba(225, 29, 72, 0.2) !important;
+}
+
+/* ---------- SPECIFIC FOR NAVBAR ---------- */
+html.theme-red-white .group-hover\:w-full {
+  background-color: var(--rw-accent) !important;
+}/* ---------- SCROLLBAR ---------- */
+html.theme-red-white ::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+html.theme-red-white ::-webkit-scrollbar-thumb {
+  background: var(--rw-accent);
+  border-radius: 4px;
+}
+

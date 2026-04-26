@@ -1,0 +1,272 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Enquiry {
+  id              String        @id @default(auto()) @map("_id") @db.ObjectId
+  
+  // 1. Basic Info
+  name            String
+  gender          String?
+  dob             String?
+  phone           String
+  email           String?
+  cityState       String?
+
+  // 2. Academic Details
+  qualification   String?
+  stream          String?
+  college         String?
+  passingYear     String?
+
+  // 3. Course Interest
+  course          String
+  mode            String?
+  timing          String?
+
+  // 4. Career Intent
+  reason          String?
+  goal            String?
+
+  // 5. Experience
+  priorKnowledge  String?
+  skills          String?
+
+  // 6. Budget & Commitment
+  budget          String?
+  startTime       String?
+
+  // 7. Source Tracking
+  source          String        @default("Website")
+
+  // 8. Additional Message
+  message         String?
+  consent         Boolean       @default(false)
+  signature       String?
+
+  // CRM fields
+  status          String        @default("Lead")
+  priority        String        @default("Medium")
+  interactions    Interaction[]
+  
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+model Interaction {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  enquiryId String   @db.ObjectId
+  enquiry   Enquiry  @relation(fields: [enquiryId], references: [id], onDelete: Cascade)
+  type      String
+  note      String
+  adminName String   @default("Admin")
+  createdAt DateTime @default(now())
+}
+
+model Course {
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  slug        String       @unique
+  description String
+  duration    String
+  price       String?
+  showPrice   Boolean      @default(true)
+  enrollments Enrollment[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Student {
+  id              String       @id @default(auto()) @map("_id") @db.ObjectId
+  
+  // Basic Info
+  name            String
+  gender          String?
+  dob             String?
+  email           String?
+  phone           String
+  alternatePhone  String?
+  address         String?
+  cityState       String?
+  guardianName    String?
+
+  // Academic Profile
+  qualification   String?
+  stream          String?
+  college         String?
+  passingYear     String?
+
+  // Professional Profile
+  goal            String?
+  skills          String?
+
+  enrollments     Enrollment[]
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+}
+
+model Enrollment {
+  id           String        @id @default(auto()) @map("_id") @db.ObjectId
+  studentId    String        @db.ObjectId
+  student      Student       @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  courseId     String        @db.ObjectId
+  course       Course        @relation(fields: [courseId], references: [id])
+  totalFees    Float         @default(0)
+  feesPaid     Float         @default(0)
+  status       String        @default("Active")
+  transactions Transaction[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Transaction {
+  id            String     @id @default(auto()) @map("_id") @db.ObjectId
+  enrollmentId  String     @db.ObjectId
+  enrollment    Enrollment @relation(fields: [enrollmentId], references: [id], onDelete: Cascade)
+  amount        Float
+  method        String     // Cash, UPI, Bank Transfer, Card
+  receiptNumber String     @unique
+  note          String?
+  date          DateTime   @default(now())
+  createdAt     DateTime   @default(now())
+}
+
+model Placement {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  studentName String
+  company     String
+  role        String
+  package     String?
+  year        String
+  image       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Employee {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  email       String   @unique
+  phone       String
+  role        String
+  salary      Float?
+  joinDate    DateTime @default(now())
+  status      String   @default("Active")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Trainer {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  role        String   // e.g. "Full Stack Developer & Trainer"
+  experience  String   // e.g. "8+ Years"
+  photo       String?  // URL or base64
+  shortBio    String   // one-liner shown on homepage
+  fullBio     String   // full journey shown on detail page
+  skills      String[] // array of skill tags
+  linkedin    String?
+  github      String?
+  order       Int      @default(0) // for sorting
+  isVisible   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Video {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  url         String   // YouTube/Vimeo URL
+  thumbnail   String?
+  isVisible   Boolean  @default(true)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+enum Role {
+  STUDENT
+  ADMIN
+  SUPER_ADMIN
+}
+
+model BlogPost {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  slug        String   @unique
+  content     String
+  image       String?
+  author      String   @default("MIST Team")
+  category    String   @default("Tech")
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Attendance {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId        String    @db.ObjectId
+  user          User      @relation(fields: [userId], references: [id])
+  type          String    // "IN" or "OUT"
+  timestamp     DateTime  @default(now())
+  lat           Float?
+  lng           Float?
+  locationName  String?
+  deviceInfo    String?
+}
+
+model LearningLog {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String   @db.ObjectId
+  user        User     @relation(fields: [userId], references: [id])
+  content     String
+  signature   String?  // Base64 image data or digital confirmation
+  createdAt   DateTime @default(now())
+}
+
+model User {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  email        String   @unique
+  password     String
+  name         String
+  role         Role     @default(STUDENT)
+  studentId    String? 
+  permissions  String[] @default([])
+  reviews      Review[]
+  attendance   Attendance[]
+  learningLogs LearningLog[]
+  resetToken    String?
+  resetTokenExpiry DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Review {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  studentName  String
+  courseName   String
+  reviewText   String
+  rating       Int      @default(5)
+  studentPhoto String?
+  order        Int      @default(0)
+  isVisible    Boolean  @default(false)
+  userId       String?  @db.ObjectId
+  user         User?    @relation(fields: [userId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model SiteSetting {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  key       String   @unique
+  value     String
+  updatedAt DateTime @updatedAt
+}
