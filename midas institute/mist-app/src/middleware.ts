@@ -3,8 +3,14 @@ import type { NextRequest } from "next/server";
 import { getSession } from "@/lib/auth";
 
 export async function middleware(request: NextRequest) {
-  const session = await getSession();
   const { pathname } = request.nextUrl;
+  let session = null;
+
+  try {
+    session = await getSession();
+  } catch (error) {
+    console.error("Middleware: Session check failed", error);
+  }
 
   // Protect Admin Routes
   if (pathname.startsWith("/admin")) {

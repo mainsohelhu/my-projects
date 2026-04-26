@@ -29,18 +29,27 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   // 1. Fetch Global Theme from DB (Source of Truth for Everyone)
-  const [themeSetting, configSetting] = await Promise.all([
-    prisma.siteSetting.findUnique({ where: { key: "site-theme" } }),
-    prisma.siteSetting.findUnique({ where: { key: "custom-theme-config" } }),
-  ]);
-  
-  // 2. Fallback to cookie if DB fails, then default
-  const cookieStore = await cookies();
-  const dbTheme = themeSetting?.value as SiteTheme;
-  const dbConfig = configSetting?.value ? JSON.parse(configSetting.value) : null;
-  const cookieTheme = cookieStore.get("site-theme")?.value as SiteTheme;
-  
-  const siteTheme = (dbTheme || cookieTheme || "default") as SiteTheme;
+  let siteTheme: SiteTheme = "default";
+  let dbConfig: any = null;
+
+  try {
+    const [themeSetting, configSetting] = await Promise.all([
+      prisma.siteSetting.findUnique({ where: { key: "site-theme" } }),
+      prisma.siteSetting.findUnique({ where: { key: "custom-theme-config" } }),
+    ]);
+    
+    const dbThemeValue = themeSetting?.value as SiteTheme;
+    dbConfig = configSetting?.value ? JSON.parse(configSetting.value) : null;
+    
+    // 2. Fallback to cookie if DB fails, then default
+    const cookieStore = await cookies();
+    const cookieTheme = cookieStore.get("site-theme")?.value as SiteTheme;
+    
+    siteTheme = (dbThemeValue || cookieTheme || "default") as SiteTheme;
+  } catch (error) {
+    console.error("Layout: Failed to fetch theme from DB, using defaults.", error);
+  }
+
   const htmlClass = siteTheme === "purple-dark" ? "theme-purple-dark" : siteTheme === "red-white" ? "theme-red-white" : siteTheme === "custom" ? "theme-custom" : "";
 
   return (
